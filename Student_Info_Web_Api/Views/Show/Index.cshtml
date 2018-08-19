@@ -1,0 +1,175 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+
+    function blank() {
+        $("#t1").val("");
+        $("#t2").val("");
+        $("#t3").val("");
+        $("#t4").val("");
+        $("#t5").val("");
+    }
+    function refresh() {
+        $.ajax({
+            type: "get",
+            url: "/api/StudentApi",
+            datatype: "json",
+            contenttype: "application/json",
+            success: function (data) {
+                var s = "";
+                for (var i = 0; i < data.length; i++) {
+                    s += "<tr>";
+                    s += "<td>" + data[i].id + "</td>";
+                    s += "<td>" + data[i].name + "</td>";
+                    s += "<td>" + data[i].fathername + "</td>";
+                    s += "<td>" + data[i].email + "</td>";
+                    s += "<td>" + data[i].phone + "</td>";
+                    s += "</tr>"
+                }
+
+                $("#student tbody").html(s);
+            },
+            error: function (xhr) {
+                alert(xhr.responsetext);
+            }
+        });
+    }
+
+    $(document).ready(function () {
+
+        refresh();
+
+        $("#b1").click(function () {
+            var productData = {
+                "id": $("#t1").val(),
+                "name": $("#t2").val(),
+                "fathername": $("#t3").val(),
+                "email": $("#t4").val(),
+                "phone": $("#t5").val(),
+            };
+            $.ajax({
+                type: "POST",
+                url: "/api/StudentApi",
+                data: JSON.stringify(productData),
+                dataType: "json",
+                contentType: "application/json",
+                success: function (data) {
+                    alert("Data Inserted Successfully");
+                    blank();
+                    refresh();
+                },
+                error: function (xhr) {
+                    alert(xhr.responseText);
+                }
+            });
+        });
+
+        $("#b3").click(function () {
+            var productData = {
+                "id": $("#t1").val(),
+                "name": $("#t2").val(),
+                "fathername": $("#t3").val(),
+                "email": $("#t4").val(),
+                "phone": $("#t5").val(),
+            };
+            $.ajax({
+                type: "PUT",
+                url: "/api/StudentApi/" + $("#t1").val(),
+                data: JSON.stringify(productData),
+                dataType: "json",
+                contentType: "application/json",
+                success: function (data) {
+                    alert("Data Updated Successfully");
+                    blank();
+                    refresh();
+                },
+                error: function (xhr) {
+                    alert(xhr.responseText);
+                }
+            });
+        });
+
+        $("#b2").click(function () {
+            var productData = {
+                "id": $("#t1").val(),
+                "name": $("#t2").val(),
+                "fathername": $("#t3").val(),
+                "email": $("#t4").val(),
+                "phone": $("#t5").val(),
+            };
+            $.ajax({
+                type: "DELETE",
+                url: "/api/StudentApi/" + $("#t1").val(),
+                data: JSON.stringify(productData),
+                dataType: "json",
+                contentType: "application/json",
+                success: function (data) {
+                    alert("Data Deleted Successfully");
+                    blank();
+                    refresh();
+                },
+                error: function (xhr) {
+                    alert(xhr.responseText);
+                }
+            });
+        });
+    });
+</script>
+<div class="container">
+    <h2>CRUD On STUDENT</h2>
+    <div class="form-group">
+        <label for="t1" class="col-md-2">ID:</label>
+        <div class="col-md-10">
+            <input type="text" id="t1" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="t2" class="col-md-2">Name:</label>
+        <div class="col-md-10">
+            <input type="text" id="t2" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="t3" class="col-md-2">Father Name:</label>
+        <div class="col-md-10">
+            <input type="text" id="t3" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="t4" class="col-md-2">Email:</label>
+        <div class="col-md-10">
+            <input type="text" id="t4" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="t5" class="col-md-2">Phone:</label>
+        <div class="col-md-10">
+            <input type="text" id="t5" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="button" id="b1" value="Add" class="btn btn-default" />
+            <input type="button" id="b2" value="Delete" class="btn btn-default" />
+            <input type="button" id="b3" value="Update" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+<hr />
+<table class="table table-striped" id="student">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Father Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+

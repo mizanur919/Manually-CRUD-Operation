@@ -1,0 +1,10 @@
+C:\Users\IDB-PC15\Desktop\Student_Info_Web_Api_Solution\Student_Info_Web_Api\bin\Debug\netcoreapp2.0\Student_Info_Web_Api.deps.json
+C:\Users\IDB-PC15\Desktop\Student_Info_Web_Api_Solution\Student_Info_Web_Api\bin\Debug\netcoreapp2.0\Student_Info_Web_Api.runtimeconfig.json
+C:\Users\IDB-PC15\Desktop\Student_Info_Web_Api_Solution\Student_Info_Web_Api\bin\Debug\netcoreapp2.0\Student_Info_Web_Api.runtimeconfig.dev.json
+C:\Users\IDB-PC15\Desktop\Student_Info_Web_Api_Solution\Student_Info_Web_Api\bin\Debug\netcoreapp2.0\Student_Info_Web_Api.dll
+C:\Users\IDB-PC15\Desktop\Student_Info_Web_Api_Solution\Student_Info_Web_Api\bin\Debug\netcoreapp2.0\Student_Info_Web_Api.pdb
+C:\Users\IDB-PC15\Desktop\Student_Info_Web_Api_Solution\Student_Info_Web_Api\obj\Debug\netcoreapp2.0\Student_Info_Web_Api.csproj.CoreCompileInputs.cache
+C:\Users\IDB-PC15\Desktop\Student_Info_Web_Api_Solution\Student_Info_Web_Api\obj\Debug\netcoreapp2.0\Student_Info_Web_Api.AssemblyInfoInputs.cache
+C:\Users\IDB-PC15\Desktop\Student_Info_Web_Api_Solution\Student_Info_Web_Api\obj\Debug\netcoreapp2.0\Student_Info_Web_Api.AssemblyInfo.cs
+C:\Users\IDB-PC15\Desktop\Student_Info_Web_Api_Solution\Student_Info_Web_Api\obj\Debug\netcoreapp2.0\Student_Info_Web_Api.dll
+C:\Users\IDB-PC15\Desktop\Student_Info_Web_Api_Solution\Student_Info_Web_Api\obj\Debug\netcoreapp2.0\Student_Info_Web_Api.pdb
